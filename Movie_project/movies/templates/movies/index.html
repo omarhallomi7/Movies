@@ -1,16 +1,10 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Movies</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-</head>
-<body>
-    <h1>Movies List</h1>
-        {% for movie in movies %}
-                <a href="{% url 'movie_detail' movie.slug %}">
-                    <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" width="500px" height="200px"/>
-                </a>      
-        {% endfor %}
-</body>
-</html>
+{% extends 'base_layout.html' %}
+{% block content %}
+<h1>Movies List</h1>
+    {% for movie in movies %}
+            <a href="{% url 'movie_detail' movie.slug %}">
+                <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" width="500px" height="200px"/>
+            </a>      
+    {% endfor %}
+{% endblock %}
+
