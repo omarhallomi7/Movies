@@ -9,20 +9,20 @@
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
+        <div class="nav-left">
+            <a href="{% url 'home' %}">Home</a>
+        </div>
+        <div class="nav-right">
             {% if user.is_authenticated %}
-                <li>
-                    <form action="{% url 'accounts:logout' %}" method="post">
-                        {% csrf_token %}
-                        <button type="submit">Logout</button>
-                    </form>
-                </li>
+                <form action="{% url 'accounts:logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                </form>
             {% else %}
-                <li><a href="{% url 'accounts:login' %}">Login</a></li>
-                <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+                <a href="{% url 'accounts:login' %}">Login</a>
+                <a href="{% url 'accounts:signup' %}">Signup</a>
             {% endif %}
-        </ul>
+        </div>
     </nav>
     <div class="container">
         {% block content %}

@@ -1,12 +1,17 @@
 {% extends 'base_layout.html' %}
 {% block content %}
-
-<h1>{{ movie.title }}</h1>
-<p>{{ movie.description }}</p>
-<img src="{{ movie.poster.url }}" alt="{{ movie.title }}" width="500px" height="200px"/>
-<p>Release Date: {{ movie.release_date }}</p>
-<p>Actors: {{ movie.actors }}</p>
-<p>Director: {{ movie.director }}</p>
-
+<div class="movie-detail">
+    <div class="text-content">
+        <h1>{{ movie.title }}</h1>
+        <p>{{ movie.description }}</p>
+        <div class="movie-meta">
+            <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+            <p><strong>Actors:</strong> {{ movie.actors }}</p>
+            <p><strong>Director:</strong> {{ movie.director }}</p>
+        </div>
+    </div>
+    <div class="movie-image">
+        <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" />
+    </div>
+</div>
 {% endblock %}
-
