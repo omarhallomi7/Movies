@@ -2,7 +2,7 @@
 {% block content %}
 <h1>Movies List</h1>
     {% for movie in movies %}
-            <a href="{% url 'movie_detail' movie.slug %}">
+            <a href="{% url 'movies:movie_detail' movie.slug %}">
                 <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" width="500px" height="200px"/>
             </a>      
     {% endfor %}
