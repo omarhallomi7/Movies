@@ -3,11 +3,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Movies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Movies</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <div>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            {% if user.is_authenticated %}
+                <li>
+                    <form action="{% url 'accounts:logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+            {% else %}
+                <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="container">
         {% block content %}
         {% endblock %}
     </div>
