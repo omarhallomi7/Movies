@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Movie(models.Model):
-    poster = models.ImageField(default='default.png', blank=True,upload_to='posters/')
+    poster = models.ImageField(blank=True,upload_to='posters/')
     title = models.CharField(max_length=100)
     slug = models.SlugField()
     description = models.TextField()

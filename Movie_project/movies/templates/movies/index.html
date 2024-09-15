@@ -5,10 +5,10 @@
 </head>
 <body>
     <h1>Movies List</h1>
-    <ul>
         {% for movie in movies %}
-            <li><a href="{% url 'movie_detail' movie.id %}">{{ movie.title }}</a></li>
+                <a href="{% url 'movie_detail' movie.slug %}">
+                    <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" width="500px" height="200px"/>
+                </a>      
         {% endfor %}
-    </ul>
 </body>
 </html>
