@@ -1,4 +1,5 @@
 {% extends 'base_layout.html' %}
+
 {% block content %}
 <div class="movie-detail">
     <div class="text-content">
@@ -15,4 +16,36 @@
         <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" />
     </div>
 </div>
+
+{% if user.is_authenticated %}
+    <div class="review-form-container">
+        <h2>Submit Your Review</h2>
+        <form action="{% url 'movies:submit_review' movie.slug %}" method="post">
+            {% csrf_token %}
+            {{ review_form.as_p }}
+            <button type="submit" class="submit-button">Submit Review</button>
+        </form>
+    </div>
+{% else %}
+    <p class="login-prompt">Please <a href="{% url 'accounts:login' %}" class="login-link">log in</a> to submit a review.</p>
+{% endif %}
+
+<div class="reviews-container">
+    <h2>Reviews</h2>
+    {% for review in reviews %}
+        <div class="review-item">
+            <p class="review-author"><strong>{{ review.reviewer_name }}:</strong></p>
+            <div class="review-rating">
+                {% for star in "12345" %}
+                <span class="star {% if star|add:"0" <= review.rating %}filled{% endif %}">★</span>
+                {% endfor %}
+            </div>
+            <p class="review-text">{{ review.comment }}</p>
+        </div>
+    {% empty %}
+        <p class="no-reviews">No reviews yet.</p>
+    {% endfor %}
+</div>
+
+
 {% endblock %}

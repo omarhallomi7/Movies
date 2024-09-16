@@ -239,3 +239,114 @@ nav .nav-right button:hover {
         max-width: 80%;
     }
 }
+
+/* Review Form Container */
+.review-form-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+.review-form-container h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.review-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-form-container form p {
+    margin-bottom: 15px;
+}
+
+.review-form-container .submit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.review-form-container .submit-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.login-prompt {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 16px;
+    color: #666;
+}
+
+.login-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+/* Container for the reviews */
+.reviews-container {
+    margin: 20px;
+}
+
+/* Individual review item styling */
+.review-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+/* Star rating styling */
+.review-rating {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    font-size: 1.5rem; /* Adjust the size of the stars */
+    color: lightgray; /* Default color for empty stars */
+    margin-right: 2px;
+}
+
+.star.filled {
+    color: gold; /* Color for filled stars */
+}
+
+/* Review author styling */
+.review-author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Review text styling */
+.review-text {
+    margin-top: 10px;
+}
+
+/* No reviews message styling */
+.no-reviews {
+    color: gray;
+    font-style: italic;
+}
+
+
