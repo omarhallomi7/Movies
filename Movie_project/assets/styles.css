@@ -126,104 +126,116 @@ nav .nav-right button:hover {
 /* Movie List Page */
 .movies-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-    padding: 2rem;
+    flex-wrap: wrap; /* Allows items to wrap into the next row */
+    gap: 20px; /* Adds space between movie items */
+    justify-content: center; /* Centers the items in the container */
 }
 
+/* Individual movie item */
 .movie-item {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px; /* Set a fixed width for the movie item */
+    border: 1px solid #ddd; /* Optional: adds a border around the item */
+    border-radius: 10px; /* Optional: adds rounded corners */
+    overflow: hidden; /* Ensures that the image does not overflow its container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
     text-align: center;
+    transition: transform 0.3s ease; /* Adds a smooth hover effect */
 }
 
-.movie-item:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
-}
-
+/* Poster image styling */
 .movie-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    width: 100%; /* Full width to fit the container */
+    height: 300px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures the image covers the container without stretching */
+    border-bottom: 1px solid #ddd; /* Adds a bottom border separating the image from the title */
 }
 
+/* Movie title styling */
 .movie-item h1 {
-    font-size: 1.25rem;
-    padding: 1rem;
-    color: #333;
-    background-color: #f8f8f8;
-    margin: 0;
+    font-size: 1.2em;
+    margin: 10px 0;
 }
 
+/* Hover effect */
+.movie-item:hover {
+    transform: scale(1.05); /* Enlarges the item slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhances the shadow on hover */
+}
 /* Movie Detail Page */
 .movie-detail {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 20px;
 }
 
-.movie-detail .text-content {
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
+/* Background image at the top */
+.text-content img {
+    width: 100%;
+    height: 300px; /* Set your desired height for the background image */
+    object-fit: cover; /* Ensures the image covers the div without stretching */
+    margin-bottom: 20px;
 }
 
-.movie-detail .text-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555;
+/* Movie details section on the left side */
+.text-content {
+    flex: 2;
+    padding-right: 20px;
 }
 
-.movie-detail .text-content .movie-meta {
-    margin-top: 1.5rem;
-    font-size: 1.2rem;
+.text-content h1 {
+    margin-top: 0;
+    font-size: 36px;
     color: #333;
 }
 
-.movie-detail .text-content .movie-meta p {
-    font-size: 1rem;
-    margin: 0.5rem 0;
+.text-content p {
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
-.movie-detail .movie-image {
+.movie-meta p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Movie poster section on the right side */
+.movie-image {
     flex: 1;
-    min-width: 300px;
-    max-width: 500px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.movie-detail .movie-image img {
+.movie-image img {
     width: 100%;
+    max-width: 350px; /* Make the poster a bit bigger */
     height: auto;
-    border-radius: 8px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
 }
 
-/* Responsive Design */
+/* Add a hover effect for the movie poster */
+.movie-image img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+/* Responsive design for smaller screens */
 @media (max-width: 768px) {
     .movie-detail {
         flex-direction: column;
-        align-items: center;
-        padding: 1rem;
     }
 
-    .movie-detail .text-content,
-    .movie-detail .movie-image {
-        max-width: 100%;
+    .movie-image {
+        text-align: center;
+        margin-top: 20px;
+        justify-content: center; /* Center the poster on smaller screens */
     }
 
-    .movie-item {
-        width: 100%;
-        max-width: 400px;
+    .movie-image img {
+        max-width: 80%;
     }
 }

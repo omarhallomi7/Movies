@@ -2,6 +2,7 @@
 {% block content %}
 <div class="movie-detail">
     <div class="text-content">
+        <img src="{{ movie.background.url }}" alt="{{ movie.background }}" />
         <h1>{{ movie.title }}</h1>
         <p>{{ movie.description }}</p>
         <div class="movie-meta">
