@@ -1,3 +1,4 @@
+# movies/views.py
 from django.shortcuts import render, get_object_or_404,redirect
 from .models import Movie, Review
 from .forms import ReviewForm

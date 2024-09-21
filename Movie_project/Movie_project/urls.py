@@ -1,3 +1,4 @@
+# Movie_project/urls.py
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -9,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('movies/', include('movies.urls')),
     path('accounts/', include('accounts.urls')),
-    path('', movie_views.movie_list, name="home")
+    path('', movie_views.movie_list, name="home"),
 ]
 
 if settings.DEBUG:
