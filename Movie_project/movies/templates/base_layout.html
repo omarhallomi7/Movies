@@ -10,20 +10,25 @@
 <body>
     <nav>
         <div class="nav-left">
-            <a href="{% url 'home' %}">Home</a>
+            <!-- Home button in the left upper side of the page  -->
+            <a href="{% url 'home' %}">Home</a> 
         </div>
+        <!-- login, signup and logout buttons in the right upper side of the page -->
         <div class="nav-right">
+            <!-- if user is authenticated, a logout button will appear -->
             {% if user.is_authenticated %}
                 <form action="{% url 'accounts:logout' %}" method="post">
                     {% csrf_token %}
                     <button type="submit">Logout</button>
                 </form>
+            <!-- if user is NOT authenticated, a login and signup buttons will appear -->    
             {% else %}
                 <a href="{% url 'accounts:login' %}">Login</a>
                 <a href="{% url 'accounts:signup' %}">Signup</a>
             {% endif %}
         </div>
     </nav>
+    <!-- Block content container -->
     <div class="container">
         {% block content %}
         {% endblock %}

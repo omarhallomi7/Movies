@@ -1,6 +1,10 @@
+<!-- base layout included -->
 {% extends 'base_layout.html' %}
 
+<!-- Block content starts here -->
 {% block content %}
+
+<!-- first part of the page to show movie detailes -->
 <div class="movie-detail">
     <div class="text-content">
         <img src="{{ movie.background.url }}" alt="{{ movie.background }}" />
@@ -17,19 +21,22 @@
     </div>
 </div>
 
+<!-- if user is logged in he can submit a review -->
 {% if user.is_authenticated %}
     <div class="review-form-container">
         <h2>Submit Your Review</h2>
         <form action="{% url 'movies:submit_review' movie.slug %}" method="post">
             {% csrf_token %}
-            {{ review_form.as_p }}
+            {{ review_form }}
             <button type="submit" class="submit-button">Submit Review</button>
         </form>
     </div>
+<!-- if user is NOT logged in, login button will appear -->
 {% else %}
     <p class="login-prompt">Please <a href="{% url 'accounts:login' %}" class="login-link">log in</a> to submit a review.</p>
 {% endif %}
 
+<!-- list of reviews ( if any ) -->
 <div class="reviews-container">
     <h2>Reviews</h2>
     {% for review in reviews %}

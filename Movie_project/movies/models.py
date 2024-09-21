@@ -1,7 +1,7 @@
 # movies/models.py
 from django.db import models
 
-# Create your models here.
+# Movie model
 class Movie(models.Model):
     poster = models.ImageField(blank=True,upload_to='posters/')
     background = models.ImageField(blank=True,upload_to='posters/')
@@ -15,6 +15,7 @@ class Movie(models.Model):
     def __str__(self):
         return self.title
 
+# Review model
 class Review(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     reviewer_name = models.CharField(max_length=100)
