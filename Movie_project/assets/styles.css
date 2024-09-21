@@ -1,4 +1,4 @@
-/* General Styles */
+/* BASE LAYOUT */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
@@ -7,7 +7,6 @@ body {
     padding: 0;
 }
 
-/* Navigation Bar */
 nav {
     background-color: #333;
     padding: 1rem;
@@ -126,41 +125,38 @@ nav .nav-right button:hover {
 /* Movie List Page */
 .movies-list {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap into the next row */
-    gap: 20px; /* Adds space between movie items */
-    justify-content: center; /* Centers the items in the container */
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
 }
 
-/* Individual movie item */
 .movie-item {
-    width: 200px; /* Set a fixed width for the movie item */
-    border: 1px solid #ddd; /* Optional: adds a border around the item */
-    border-radius: 10px; /* Optional: adds rounded corners */
-    overflow: hidden; /* Ensures that the image does not overflow its container */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    width: 200px; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     text-align: center;
-    transition: transform 0.3s ease; /* Adds a smooth hover effect */
+    transition: transform 0.3s ease; 
 }
 
-/* Poster image styling */
 .movie-item img {
-    width: 100%; /* Full width to fit the container */
-    height: 300px; /* Fixed height for consistency */
-    object-fit: cover; /* Ensures the image covers the container without stretching */
-    border-bottom: 1px solid #ddd; /* Adds a bottom border separating the image from the title */
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    border-bottom: 1px solid #ddd; 
 }
 
-/* Movie title styling */
 .movie-item h1 {
     font-size: 1.2em;
     margin: 10px 0;
 }
 
-/* Hover effect */
 .movie-item:hover {
-    transform: scale(1.05); /* Enlarges the item slightly on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhances the shadow on hover */
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
+
 /* Movie Detail Page */
 .movie-detail {
     display: flex;
@@ -169,15 +165,14 @@ nav .nav-right button:hover {
     margin-top: 20px;
 }
 
-/* Background image at the top */
 .text-content img {
     width: 100%;
-    height: 300px; /* Set your desired height for the background image */
-    object-fit: cover; /* Ensures the image covers the div without stretching */
+    height: 300px; 
+    object-fit: cover; 
     margin-bottom: 20px;
 }
 
-/* Movie details section on the left side */
+
 .text-content {
     flex: 2;
     padding-right: 20px;
@@ -199,7 +194,6 @@ nav .nav-right button:hover {
     margin-bottom: 10px;
 }
 
-/* Movie poster section on the right side */
 .movie-image {
     flex: 1;
     text-align: right;
@@ -210,34 +204,17 @@ nav .nav-right button:hover {
 
 .movie-image img {
     width: 100%;
-    max-width: 350px; /* Make the poster a bit bigger */
+    max-width: 350px; 
     height: auto;
-    border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+    border-radius: 12px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
-/* Add a hover effect for the movie poster */
+
 .movie-image img:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
-}
-
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-    .movie-detail {
-        flex-direction: column;
-    }
-
-    .movie-image {
-        text-align: center;
-        margin-top: 20px;
-        justify-content: center; /* Center the poster on smaller screens */
-    }
-
-    .movie-image img {
-        max-width: 80%;
-    }
+    transform: scale(1.05); 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); 
 }
 
 /* Review Form Container */
@@ -307,7 +284,6 @@ nav .nav-right button:hover {
     margin: 20px;
 }
 
-/* Individual review item styling */
 .review-item {
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -316,34 +292,30 @@ nav .nav-right button:hover {
     background-color: #f9f9f9;
 }
 
-/* Star rating styling */
 .review-rating {
     display: flex;
     align-items: center;
 }
 
 .star {
-    font-size: 1.5rem; /* Adjust the size of the stars */
-    color: lightgray; /* Default color for empty stars */
+    font-size: 1.5rem; 
+    color: lightgray; 
     margin-right: 2px;
 }
 
 .star.filled {
-    color: gold; /* Color for filled stars */
+    color: gold; 
 }
 
-/* Review author styling */
 .review-author {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-/* Review text styling */
 .review-text {
     margin-top: 10px;
 }
 
-/* No reviews message styling */
 .no-reviews {
     color: gray;
     font-style: italic;
